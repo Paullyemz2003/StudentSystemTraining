@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="StudentController" spacing="10">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Student Registration System" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <GridPane hgap="10" vgap="10">
+        <Label text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="nameField" promptText="Enter full name" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+        <Label text="Program:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <ComboBox fx:id="programBox" promptText="Select program" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    </GridPane>
+
+    <Button fx:id="saveButton" text="Save Student" onAction="#saveStudent"/>
+    <Label fx:id="messageLabel"/>
+
+    <TableView fx:id="table" prefHeight="200">
+        <columns>
+            <TableColumn fx:id="nameCol" text="Student Name" prefWidth="180"/>
+            <TableColumn fx:id="programCol" text="Program" prefWidth="180"/>
+        </columns>
+    </TableView>
+</VBox>
